@@ -12,3 +12,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.questions {
+  width: 70%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid rgb(214, 44, 172);
+  margin-top: 2em;
+}
+
+.list {
+  margin: 2em;
+}
+
+.tabs {
+  border-bottom: 2px solid rgb(214, 44, 172);
+  box-shadow: 0px 3px 5px grey;
+  text-align: center;
+}
+
+.tab {
+  border: none;
+  width: 50%;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: .5em 0;
+}
+
+.active {
+  background-color: rgb(214, 44, 172);
+  color: white;
+}
+
+.inactive {
+  color: rgb(214, 44, 172);
+}
+
+button:focus {
+  outline: none;
+}
