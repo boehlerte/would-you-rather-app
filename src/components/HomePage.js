@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Question from './Question';
+import Question from './Question'
 
 class HomePage extends Component {
     state = {
@@ -18,22 +18,21 @@ class HomePage extends Component {
         console.log(view)
 
         return (
-            <div className='questions'>
+            <div className='questions-container'>
                 <div className='tabs'>
-                    <button 
-                        className='tab' 
+                    <button
                         className={view === 'answered' ? 'active tab' : 'inactive tab'}
                         onClick={() => this.toggleView('answered')}>
                         Answered
                     </button>
-                    <button 
-                        className='tab' 
+                    <button
                         className={view === 'unanswered' ? 'active tab' : 'inactive tab'}
                         onClick={() => this.toggleView('unanswered')}>
                         Unanswered
                     </button>
                 </div>
-                {view === 'answered' 
+                <div className='questions-content'>
+                    {view === 'answered' 
                     ? <ul className='answered list'>
                         {this.props.answered.map((id) => (
                             <li key={id}>
@@ -49,8 +48,8 @@ class HomePage extends Component {
                             </li>
                         ))}
                     </ul>
-                }
-                
+                    }
+                </div>
             </div>
         )
     }

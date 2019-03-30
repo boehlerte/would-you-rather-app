@@ -13,40 +13,108 @@ code {
     monospace;
 }
 
-.questions {
-  width: 70%;
+.main-container {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  margin: 3em auto;
+}
+
+.questions-container {
   max-width: 800px;
-  margin: 0 auto;
-  border: 2px solid rgb(214, 44, 172);
-  margin-top: 2em;
+  margin: 1em;
+  border: 1px solid rgb(202, 201, 201);
+  border-radius: .5em;
+  overflow: hidden;
+}
+
+.questions-content {
+  overflow: scroll;
+  height: 80vh;
 }
 
 .list {
-  margin: 2em;
+  margin: 3em auto;
+  list-style: none;
+  padding: 0;
+  width: 75%;
+}
+
+.question {
+  margin-top: 1em;
+  background-color: white;
+  border-radius: .5em;
+  border: 1px solid rgb(202, 201, 201);
+  overflow: hidden;
+}
+
+.header {
+  border-bottom: 1px solid rgb(218, 214, 214);
+  padding: 1em;
+  margin: 0 auto 1em;
+  background-color: rgb(243, 241, 241);
+}
+
+.content {
+  padding: 1em;
+}
+
+.view-poll {
+  margin-top: 1em;
+  width: 100%;
+}
+
+.author {
+  text-align: center;
+  border-right: 1px solid rgb(218, 214, 214);
+}
+
+.avatar {
+  width: 6em;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.result {
+  border: 2px solid rgb(6, 131, 180);
+  border-radius: .5em;
+  padding: 1em;
+  margin-top: 1em;
+  color: rgb(6, 131, 180);
+}
+
+.answer {
+  background-color: rgb(229, 242, 248);
+}
+
+.progress {
+  height: 20px;
+}
+
+.progress-bar {
+  background-color: rgb(6, 131, 180);
 }
 
 .tabs {
-  border-bottom: 2px solid rgb(214, 44, 172);
-  box-shadow: 0px 3px 5px grey;
+  border-bottom: 1px solid rgb(202, 201, 201); 
   text-align: center;
 }
 
 .tab {
   border: none;
   width: 50%;
-  font-size: 1.5em;
   letter-spacing: 1px;
   font-weight: 700;
   padding: .5em 0;
 }
 
 .active {
-  background-color: rgb(214, 44, 172);
-  color: white;
+  background-color: rgb(243, 241, 241);
+  color: rgb(22, 110, 243);
 }
 
 .inactive {
-  color: rgb(214, 44, 172);
+  background-color: white;
+  color: black;
 }
 
 button:focus {
