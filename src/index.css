@@ -27,6 +27,11 @@ code {
   overflow: hidden;
 }
 
+.question-container {
+  width: 75%;
+  margin: 0 auto;
+}
+
 .questions-content {
   overflow: scroll;
   height: 80vh;
@@ -58,7 +63,7 @@ code {
   padding: 1em;
 }
 
-.view-poll {
+.view-poll, .submit-poll {
   margin-top: 1em;
   width: 100%;
 }
@@ -84,6 +89,10 @@ code {
 
 .answer {
   background-color: rgb(229, 242, 248);
+}
+
+.option {
+  margin: 1em 0 0 1em;
 }
 
 .progress {
