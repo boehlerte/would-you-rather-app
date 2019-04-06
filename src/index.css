@@ -19,6 +19,36 @@ code {
   width: 90vw;
 }
 
+.login-page {
+  border: 1px solid rgb(202, 201, 201);
+  border-radius: .5em;
+  text-align: center;
+}
+
+.login-header {
+  text-align: center;
+}
+
+.login-button {
+  margin-top: 1em;
+}
+
+.nav {
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 1em;
+  border-bottom: 2px solid rgb(22, 110, 243);
+  margin-bottom: 1em;
+}
+
+.nav > div > span {
+  margin-left: 2em;
+}
+
+.logout {
+  float: right;
+}
+
 .questions-container {
   width: 100%;
   margin: 0 auto;
@@ -77,6 +107,13 @@ code {
   width: 6em;
   border-radius: 50%;
   margin: 0 auto;
+}
+
+.mini-avatar {
+  width: 2em;
+  border-radius: 50%;
+  margin-left: .5em;
+  margin-right: 2em;
 }
 
 .result {
