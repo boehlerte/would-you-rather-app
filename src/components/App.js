@@ -32,6 +32,8 @@ class App extends Component {
                   <NavBar user={user}/>
                   <Route path='/' exact component={HomePage} />
                   <Route path='/questions/:question_id' exact component={QuestionPage} />
+                  <Route path='/add' exact component={NewQuestion} />
+                  {/* <Route path='/leaderboard' exact component={Leaderboard} /> */}
                 </div>
             }
           </div>
