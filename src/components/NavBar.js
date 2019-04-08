@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+
+import { setAuthedUser } from '../actions/authedUser'
 
 class NavBar extends Component {
+    logout = () => {
+        this.props.dispatch(setAuthedUser(null))
+    }
+
     render() {
         const { user, location } = this.props
         return (
@@ -25,4 +32,4 @@ class NavBar extends Component {
     }
 }
 
-export default withRouter(NavBar)
+export default withRouter(connect()(NavBar))

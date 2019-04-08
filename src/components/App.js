@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { handleInitialData } from '../actions/shared'
-import { setAuthedUser } from '../actions/authedUser'
 
 import HomePage from './HomePage'
 import QuestionPage from './QuestionPage'
@@ -14,10 +13,6 @@ import NewQuestion from './NewQuestion'
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
-  }
-
-  logout = () => {
-    this.props.dispatch(setAuthedUser(null))
   }
 
   render() {
