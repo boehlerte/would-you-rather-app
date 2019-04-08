@@ -9,7 +9,6 @@ class QuestionPage extends Component {
         console.log(isAnswered)
         return (
             <div className='question-container'>
-                Question Page
                 {isAnswered
                     ? <AnsweredQuestion id={id} />
                     : <UnansweredQuestion id={id} />

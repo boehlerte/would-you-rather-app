@@ -42,7 +42,8 @@ code {
 }
 
 .nav > div > span {
-  margin-left: 2em;
+  margin-left: 1em;
+  padding: .5em;
 }
 
 .logout {
@@ -80,6 +81,19 @@ code {
   border-radius: .5em;
   border: 1px solid rgb(202, 201, 201);
   overflow: hidden;
+}
+
+.new-question {
+  text-align: center;
+}
+
+.question-form {
+  padding: 1em;
+}
+
+.options {
+  width: 75%;
+  margin: 1em auto;
 }
 
 .header {
@@ -165,4 +179,8 @@ code {
 
 button:focus {
   outline: none;
+}
+
+input[type='text'] {
+  width: 100%;
 }
