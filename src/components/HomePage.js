@@ -4,7 +4,7 @@ import Question from './Question'
 
 class HomePage extends Component {
     state = {
-        view: 'answered'
+        view: 'unanswered'
     }
 
     toggleView = (view) => {
@@ -21,14 +21,14 @@ class HomePage extends Component {
             <div className='questions-container'>
                 <div className='tabs'>
                     <button
-                        className={view === 'answered' ? 'active tab' : 'inactive tab'}
-                        onClick={() => this.toggleView('answered')}>
-                        Answered
-                    </button>
-                    <button
                         className={view === 'unanswered' ? 'active tab' : 'inactive tab'}
                         onClick={() => this.toggleView('unanswered')}>
                         Unanswered
+                    </button>
+                    <button
+                        className={view === 'answered' ? 'active tab' : 'inactive tab'}
+                        onClick={() => this.toggleView('answered')}>
+                        Answered
                     </button>
                 </div>
                 <div className='questions-content'>

@@ -1,11 +1,15 @@
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
+
 import { handleInitialData } from '../actions/shared'
+import { setAuthedUser } from '../actions/authedUser'
+
 import HomePage from './HomePage'
 import QuestionPage from './QuestionPage'
-import LoginPage from './LoginPage';
-import { setAuthedUser } from '../actions/authedUser';
+import LoginPage from './LoginPage'
+import NavBar from './NavBar'
+import NewQuestion from './NewQuestion'
 
 class App extends Component {
   componentDidMount() {
@@ -17,7 +21,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props)
     const { user, users, loggedOut } = this.props
     return (
       <Router>
@@ -26,20 +29,7 @@ class App extends Component {
             {loggedOut 
               ? <LoginPage users={users}/>
               : <div className='container'>
-                  <div className='nav row'>
-                    <div className='col-6'>
-                      <span>Home</span>
-                      <span>New Question</span>
-                      <span>Leader Board</span>
-                    </div>
-                    
-                    <div className='col-6'>
-                      <span className='user'>Hello, {user.name}</span>
-                      <img src={user.avatarURL} alt='avatar' className='mini-avatar'/>
-                      <button className='btn btn-link' onClick={this.logout}>Logout</button>
-                    </div>
-                    
-                  </div>
+                  <NavBar user={user}/>
                   <Route path='/' exact component={HomePage} />
                   <Route path='/questions/:question_id' exact component={QuestionPage} />
                 </div>
