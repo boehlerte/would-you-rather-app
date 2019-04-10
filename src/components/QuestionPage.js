@@ -23,7 +23,8 @@ function mapStateToProps ({ authedUser, questions, users }, props) {
 
     return {
         id: question_id,
-        isAnswered: users[authedUser].answers[question_id] ? true : false
+        isAnswered: questions[question_id].optionOne.votes.includes(authedUser) 
+            || questions[question_id].optionTwo.votes.includes(authedUser)
     }
 }
 

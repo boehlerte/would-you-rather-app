@@ -66,7 +66,7 @@ function mapStateToProps({authedUser, questions, users}, {id}) {
     return {
         authedUser,
         question: question 
-                ? formatQuestion(question, users, authedUser)
+                ? formatQuestion(questions, users, question, authedUser)
                 : null
     }
 }

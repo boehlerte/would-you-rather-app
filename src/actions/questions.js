@@ -31,10 +31,10 @@ export function handleAddQuestion(optionOneText, optionTwoText) {
     }
 }
 
-function answerQuestion({id, authedUser, answer}) {
+function answerQuestion({qid, authedUser, answer}) {
     return {
         type: ANSWER_QUESTION,
-        id,
+        id: qid,
         authedUser,
         answer
     }
