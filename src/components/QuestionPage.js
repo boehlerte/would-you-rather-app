@@ -5,26 +5,37 @@ import UnansweredQuestion from './UnansweredQuestion'
 
 class QuestionPage extends Component {
     render() {
-        const { id, isAnswered } = this.props
+        const { id, isAnswered, questionExists } = this.props
         console.log(isAnswered)
         return (
-            <div className='question-container'>
-                {isAnswered
-                    ? <AnsweredQuestion id={id} />
-                    : <UnansweredQuestion id={id} />
+            <div>
+                { questionExists 
+                    ?  <div className='question-container'>
+                            {isAnswered
+                                ? <AnsweredQuestion id={id} />
+                                : <UnansweredQuestion id={id} />
+                            }
+                        </div>
+                    : 
+                        <div>
+                            404: Question Not Found
+                        </div>
                 }
             </div>
+           
         )
     }
 }
 
 function mapStateToProps ({ authedUser, questions, users }, props) {
     const { question_id } = props.match.params
+    const questionExists = questions[question_id]
 
     return {
         id: question_id,
-        isAnswered: questions[question_id].optionOne.votes.includes(authedUser) 
-            || questions[question_id].optionTwo.votes.includes(authedUser)
+        questionExists,
+        isAnswered: questionExists 
+            && users[authedUser].answers[question_id]
     }
 }
 

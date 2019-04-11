@@ -9,19 +9,16 @@ class LoginPage extends Component {
 
     onSelectUser = (e) => {
         const authedId = e.target.value;
-        console.log(authedId)
         this.setState({
             selectedUser: authedId
         })
     }
 
     onLogin = () => {
-        console.log('login')
         this.props.dispatch(setAuthedUser(this.state.selectedUser))
     }
 
     render() {
-        console.log(this.props)
         const { loading, users} = this.props
         return (
             <div className='login-page'>

@@ -7,9 +7,9 @@ class AnsweredQuestion extends Component {
         const { question } = this.props
         const answer = question.answer
         const optionOneVotes = question.optionOne.votes.length
-        const optionOnePercent = (optionOneVotes/question.numVotes * 100) + '%';
+        const optionOnePercent = Math.floor(optionOneVotes/question.numVotes * 100) + '%';
         const optionTwoVotes = question.optionTwo.votes.length 
-        const optionTwoPercent = (optionTwoVotes / question.numVotes * 100) + '%';
+        const optionTwoPercent = Math.floor(optionTwoVotes / question.numVotes * 100) + '%';
         console.log('question', question);
         return (
             <div className='question'>
@@ -66,7 +66,7 @@ function mapStateToProps({authedUser, questions, users}, {id}) {
     return {
         authedUser,
         question: question 
-                ? formatQuestion(questions, users, question, authedUser)
+                ? formatQuestion(users, question, authedUser)
                 : null
     }
 }
