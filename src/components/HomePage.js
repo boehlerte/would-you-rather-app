@@ -15,7 +15,6 @@ class HomePage extends Component {
 
     render() {
         const { view } = this.state
-        console.log(view)
 
         return (
             <div className='questions-container'>
@@ -34,17 +33,17 @@ class HomePage extends Component {
                 <div className='questions-content'>
                     {view === 'answered' 
                     ? <ul className='answered list'>
-                        {this.props.answered.map((id) => (
-                            <li key={id}>
-                                <Question id={id} />
+                        {this.props.answered.map((question) => (
+                            <li key={question.id}>
+                                <Question id={question.id} />
                             </li>
                         ))}
                     </ul>
 
                     : <ul className='unanswered list'>
-                        {this.props.unanswered.map((id) => (
-                            <li key={id}>
-                                <Question id={id} />
+                        {this.props.unanswered.map((question) => (
+                            <li key={question.id}>
+                                <Question id={question.id} />
                             </li>
                         ))}
                     </ul>
@@ -56,17 +55,26 @@ class HomePage extends Component {
 }
 
 function mapStateToProps({questions, authedUser}) {
+    const questionIds = Object.keys(questions)
+    const answered = [];
+    const unanswered = [];
+
+    questionIds.forEach(id => {
+        if (questions[id].optionOne.votes.includes(authedUser) 
+            || questions[id].optionTwo.votes.includes(authedUser)) {
+                answered.push(questions[id])
+        } else {
+            unanswered.push(questions[id])
+        }
+    })
+
+    answered.sort((a,b) => a.timestamp < b.timestamp ? 1 : -1)
+    unanswered.sort((a,b) => a.timestamp < b.timestamp ? 1 : -1)
+    console.log(answered)
+    console.log(unanswered)
     return {
-        answered: Object.keys(questions)
-            .filter((id) => {
-                return questions[id].optionOne.votes.includes(authedUser)
-                    || questions[id].optionTwo.votes.includes(authedUser)
-            }),
-        unanswered: Object.keys(questions)
-            .filter((id) => {
-                return !questions[id].optionOne.votes.includes(authedUser) 
-                    && !questions[id].optionTwo.votes.includes(authedUser)
-            })
+        answered,
+        unanswered 
     }
 }
 
