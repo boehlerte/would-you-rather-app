@@ -10,7 +10,6 @@ class AnsweredQuestion extends Component {
         const optionOnePercent = Math.floor(optionOneVotes/question.numVotes * 100) + '%';
         const optionTwoVotes = question.optionTwo.votes.length 
         const optionTwoPercent = Math.floor(optionTwoVotes / question.numVotes * 100) + '%';
-        console.log('question', question);
         return (
             <div className='question'>
                 <div className='row header'>

@@ -20,7 +20,6 @@ class UnansweredQuestion extends Component {
 
     render() {
         const { question } = this.props
-        console.log('question', question);
         return (
             <div className='question'>
                 <div className='row header'>

@@ -6,7 +6,6 @@ import UnansweredQuestion from './UnansweredQuestion'
 class QuestionPage extends Component {
     render() {
         const { id, isAnswered, questionExists } = this.props
-        console.log(isAnswered)
         return (
             <div>
                 { questionExists 

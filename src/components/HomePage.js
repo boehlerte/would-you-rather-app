@@ -54,14 +54,13 @@ class HomePage extends Component {
     }
 }
 
-function mapStateToProps({questions, authedUser}) {
+function mapStateToProps({questions, users, authedUser}) {
     const questionIds = Object.keys(questions)
     const answered = [];
     const unanswered = [];
 
     questionIds.forEach(id => {
-        if (questions[id].optionOne.votes.includes(authedUser) 
-            || questions[id].optionTwo.votes.includes(authedUser)) {
+        if (users[authedUser].answers[id]) {
                 answered.push(questions[id])
         } else {
             unanswered.push(questions[id])
@@ -70,8 +69,7 @@ function mapStateToProps({questions, authedUser}) {
 
     answered.sort((a,b) => a.timestamp < b.timestamp ? 1 : -1)
     unanswered.sort((a,b) => a.timestamp < b.timestamp ? 1 : -1)
-    console.log(answered)
-    console.log(unanswered)
+
     return {
         answered,
         unanswered 
