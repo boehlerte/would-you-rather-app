@@ -177,6 +177,60 @@ code {
   color: black;
 }
 
+.scorecard {
+  border: 1px solid rgb(202, 201, 201);
+  border-radius: .5em;
+  width: 85%;
+  margin: 1em auto;
+}
+
+.user, .user-stats {
+  border-right: 1px solid rgb(218, 214, 214);
+}
+
+.user-name {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.user-img {
+  width: 7em;
+  border-radius: 50%;
+  margin: 1em;
+  text-align: center;
+}
+
+.user-stats > div {
+  margin: .5em;
+}
+
+.score-header {
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 1em;
+  background-color: rgb(218, 214, 214);
+  text-align: center;
+}
+
+.score-header > span {
+  margin: auto;
+}
+
+.total {
+  background-color: rgb(22, 110, 243);
+  width: 30%;
+  height: 35%;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: .5em auto;
+}
+
+.total > span {
+  margin: auto;
+}
+
 button:focus {
   outline: none;
 }
